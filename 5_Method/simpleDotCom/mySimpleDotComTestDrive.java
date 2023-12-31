@@ -2,7 +2,7 @@
 
 public class mySimpleDotComTestDrive {
 	public static void main(String[] args) {
-		SimpleDotCom dotCom = new SimpleDotCom();
+		mySimpleDotCom dotCom = new mySimpleDotCom();
 
 		// Set a location 3,4,5
 		int location = 3;
@@ -13,6 +13,6 @@ public class mySimpleDotComTestDrive {
 			System.out.println(dotCom.checkYourself(Integer.toString(i)));
 		}
 
-		// Should print: miss, miss, hit, hit, kill and Gameover
+		// Should print: miss, miss, hit, hit, kill
 	}
 }
