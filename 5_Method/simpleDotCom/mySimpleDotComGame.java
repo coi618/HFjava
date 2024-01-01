@@ -1,5 +1,6 @@
 // Filename: mySimpleDotComGame.java
 import java.io.*;
+import java.util.ArrayList;
 
 public class mySimpleDotComGame {
 	public static void main(String[] args) {
@@ -8,7 +9,12 @@ public class mySimpleDotComGame {
 		// 1. Build a DotCom
 		mySimpleDotCom dotCom = new mySimpleDotCom();
 		// 2. Set DotCom location
-		dotCom.setLocationCells((int)(Math.random()*5)); //[0-4]
+		int firstLocNum = ((int)(Math.random()*5)); //[0-4]
+		ArrayList<String> locations = new ArrayList<String>();
+		for(int i=0; i<3; i++) {
+			locations.add(Integer.toString(firstLocNum+i));
+		} // end for
+		dotCom.setLocationCells(locations);
 		// 3. Set DotCom as alive
 		boolean Alive = true;
 		// 4. Set a guess counter = 0

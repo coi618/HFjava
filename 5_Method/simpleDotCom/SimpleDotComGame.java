@@ -1,5 +1,7 @@
 // Filename: SimpleDotComGame.java
 
+import java.util.ArrayList;
+
 public class SimpleDotComGame {
 	public static void main(String[] args) {
 		// Count how many time player guess
@@ -7,10 +9,16 @@ public class SimpleDotComGame {
 		// New a game helper
 		GameHelper helper = new GameHelper();
 		// New a DotCom
-		SimpleDotCom theDotCom = new SimpleDotCom();
+		DotCom theDotCom = new DotCom();
 		// Set DotCom's location [1-5]
 		int randomNum = (int)(Math.random()*5);
-		int[] locations = {randomNum, randomNum+1, randomNum+2};
+		// Set location with ArrayList<String>
+		ArrayList<String> locations = new ArrayList<String>();
+		for(int i=0; i<3; i++) {
+			// add location(convert (random number) to String) to ArrayList
+			locations.add(Integer.toString(randomNum+i));
+		} // end for
+		// Call setLocationCells and put locations in it
 		theDotCom.setLocationCells(locations);
 		// Set DotCom alive
 		boolean isAlive = true;
@@ -22,6 +30,8 @@ public class SimpleDotComGame {
 			String result = theDotCom.checkYourself(guess);
 			// Guess number add 1
 			numOfGuesses++;
+			// print result
+			System.out.println(result);
 			// if kill DotCom, make isAlive=false
 			if(result.equals("kill")) {
 				isAlive = false;
